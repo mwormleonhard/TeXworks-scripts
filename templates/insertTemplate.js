@@ -8,8 +8,17 @@
 // Context: TeXDocument
 // Shortcut: Ctrl+Shift+T
 
-function insertTemplate(){
-	TW.target.insertText("Hej")
+function insertTemplate(TemplateToInsert)
+{
+	TW.target.insertText(TemplateToInsert);
 }
 
-insertTemplate()
+insertTemplate("Hej");
+
+function readTemplateFile() 
+{
+	var Templates = TW.readFile("templates.txt");
+	return Templates.result;
+}
+
+insertTemplate(readTemplateFile().toString());
