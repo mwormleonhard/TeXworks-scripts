@@ -8,17 +8,20 @@
 // Context: TeXDocument
 // Shortcut: Ctrl+Shift+T
 
-function insertTemplate(TemplateToInsert)
+function insertTemplate(templateToInsert)
 {
-	TW.target.insertText(TemplateToInsert);
+	TW.target.insertText(templateToInsert);
 }
-
-insertTemplate("Hej");
 
 function readTemplateFile() 
 {
 	var Templates = TW.readFile("templates.txt");
-	return Templates.result;
+	return Templates.result.toString();
 }
 
-insertTemplate(readTemplateFile().toString());
+var entireTemplateFile = readTemplateFile();
+var header = /#\s.*\n/g;
+var templateHeaders = entireTemplateFile.match(header);
+
+insertTemplate(templateHeaders);
+insertTemplate(entireTemplateFile);
