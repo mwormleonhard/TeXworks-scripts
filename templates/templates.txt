@@ -1,4 +1,26 @@
-Hejfra templates.txt
-Linie2
-Linie3
-EOF
+// Comment line
+// File layout:
+// # Name_of_Template
+// Template body
+// ### END TEMPLATE
+// Whitespace (CRLF) is? Preserved within templates
+
+
+
+# Basic_document
+\begin{document}
+Text
+
+\end{document}
+### END TEMPLATE
+
+# Basic_table
+\begin{table}
+\begin{tabular} {c c c}
+1 & 2 & 3\\
+4 & 5 & 6\\
+\end{tabular}
+\label{}
+\caption{}
+\end{table}
+### END TEMPLATE

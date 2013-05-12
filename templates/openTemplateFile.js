@@ -10,10 +10,10 @@
 
 
 
-var retVal = TW.app.openFileFromScript("C:\\Users\\mwl\\AppData\\Local\\MiKTeX\\2.9\\TeXworks\\0.4\\scripts\\templates\\templates.txt", TW, -1,true); // TODO: Hardcoding er af det onde!
+var retVal = TW.app.openFileFromScript(TW.script.fileName.replace("openTemplateFile.js","templates.txt"), TW, -1,true); 
 if (retVal.status == 0) // SystemAccess_OK
 {
-	var openedDocumentObject = retVal["result"] ;
+	var openedDocument = retVal["result"] ;
 TW.information(null,"Tw Message",openedDocument.fileName); // shows the opened document's base filename
 TW.information(null,"Tw Message",openedDocument.text); // shows the contents of the "opened" document.
 }
