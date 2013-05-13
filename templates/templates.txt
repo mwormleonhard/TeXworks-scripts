@@ -1,20 +1,20 @@
 // Comment line
 // File layout:
-// # Name_of_Template
+// ###Name_of_Template###
 // Template body
-// ### END TEMPLATE
+// ###END_TEMPLATE###
 // Whitespace (CRLF) is? Preserved within templates
 
 
 
-# Basic_document
+###Basic_document###
 \begin{document}
 Text
 
 \end{document}
-### END TEMPLATE
+###END_TEMPLATE###
 
-# Basic_table
+###Basic_table###
 \begin{table}
 \begin{tabular} {c c c}
 1 & 2 & 3\\
@@ -23,4 +23,4 @@ Text
 \label{}
 \caption{}
 \end{table}
-### END TEMPLATE
+###END_TEMPLATE###
