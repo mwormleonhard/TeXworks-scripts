@@ -22,6 +22,16 @@ function readTemplateFile()
 var entireTemplateFile = readTemplateFile();
 var header = /#\s.*\n/g;
 var templateHeaders = entireTemplateFile.match(header);
+var templateList = templateHeaders; //.split("\n");
 
 insertTemplate(templateHeaders);
 insertTemplate(entireTemplateFile);
+
+var selectedTemplate = TW.getItem(null, 
+"Template / Snippet Selector"
+ , "Select template to inesert"
+ , templateList
+ , 0  // Default selection - zero based index
+ , false // true here means can edit
+ ); 
+ insertTemplate(selectedTemplate);
