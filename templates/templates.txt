@@ -1,26 +1,67 @@
-// Comment line
+// This is the template file for the template insertion script.
+// Comment lines in this file must begin with //
 // File layout:
 // ###Name_of_Template###
 // Template body
 // ###END_TEMPLATE###
-// Whitespace (CRLF) is? Preserved within templates
-
-
+// Whitespace and special characters are 
+// preserved within templates - they are inserted verbatim. 
+// Only lines beginning with // are omitted.
+// Whitepace between blocks are not important, as long as
+// start- and end-markers are on separate lines.
 
 ###Basic_document###
+\documentclass[a4paper,hyperref, 11pt]{article}
+\usepackage[version=3]{mhchem}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[danish]{babel}
+\usepackage[parfill]{parskip}
+%\usepackage[margin=2cm]{geometry}
+\newcommand{\celcius}{$^\circ {\textrm C}$ }
+\newcommand{\um}{$\mu$M }
+\newcommand{\ul}{$\mu$L }
+\newcommand{\mgl}{$\frac{mg}{L}$ }
+\title{Title}
+\author{Author}
+
 \begin{document}
-Text
+\maketitle
 
 \end{document}
 ###END_TEMPLATE###
 
-###Basic_table###
-\begin{table}
-\begin{tabular} {c c c}
-1 & 2 & 3\\
-4 & 5 & 6\\
-\end{tabular}
-\label{}
+
+###Skeleton_document###
+\documentclass{article}
+\begin{document}
+Text goes here
+\end{document}
+###END_TEMPLATE###
+
+
+###Basic_figure###
+\begin{figure}[h!]
+\centering
+\includegraphics[angle=0, width=0.85\textwidth]{filename}
 \caption{}
+\label{}
+%\figuresource[]{}
+\end{figure}
+###END_TEMPLATE###
+
+###Basic_table###
+\begin{table}[H]
+\centering
+\begin{tabular}{c c c}
+Head1 & Head2 & Head3\\
+\hline
+1 & 2 & 3\\
+4 & 5 & 6 \\
+\end{tabular}
+\caption{}
+\label{}
+%\tablesource[]{}
 \end{table}
 ###END_TEMPLATE###
